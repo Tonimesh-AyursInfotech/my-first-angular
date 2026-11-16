@@ -1,0 +1,14 @@
+<section class="page-banner"><p class="eyebrow">LET'S TALK</p><h1>Contact Us</h1><p>Have a question or an idea? Send us a message.</p></section>
+<section class="contact-layout">
+  <div class="contact-copy"><h2>We'd love to hear from you.</h2><p>Fill out the form and we'll get back to you. All fields marked with * are required.</p><div class="contact-detail"><strong>Email</strong><span>hello&#64;brightpath.example</span></div><div class="contact-detail"><strong>Office hours</strong><span>Monday – Friday, 9:00 AM – 6:00 PM</span></div></div>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+    @if (submitted) { <div class="success" role="status">Thank you! Your message has been submitted.</div> }
+    <div class="field"><label for="name">Full name *</label><input id="name" type="text" formControlName="name" placeholder="Enter your name" />@if (contactForm.controls.name.touched && contactForm.controls.name.invalid) { <small>Please enter at least 2 characters.</small> }</div>
+    <div class="field"><label for="email">Email address *</label><input id="email" type="email" formControlName="email" placeholder="you@example.com" />@if (contactForm.controls.email.touched && contactForm.controls.email.invalid) { <small>Enter a valid email address.</small> }</div>
+    <div class="field"><label for="phone">Phone number</label><input id="phone" type="tel" formControlName="phone" placeholder="Enter your phone number" />@if (contactForm.controls.phone.touched && contactForm.controls.phone.invalid) { <small>Enter a valid phone number.</small> }</div>
+    <div class="field"><label for="subject">Subject *</label><select id="subject" formControlName="subject"><option value="">Choose a subject</option><option value="General enquiry">General enquiry</option><option value="Support">Support</option><option value="Business proposal">Business proposal</option><option value="Other">Other</option></select>@if (contactForm.controls.subject.touched && contactForm.controls.subject.invalid) { <small>Please choose a subject.</small> }</div>
+    <div class="field"><label for="message">Message *</label><textarea id="message" rows="5" formControlName="message" placeholder="How can we help?"></textarea>@if (contactForm.controls.message.touched && contactForm.controls.message.invalid) { <small>Please enter at least 10 characters.</small> }</div>
+    <button type="submit">Send message <span aria-hidden="true">→</span></button>
+    <p class="form-note">Demo form: submission is currently logged in the browser console. Connect an API to send messages to a server.</p>
+  </form>
+</section>

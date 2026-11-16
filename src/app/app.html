@@ -1,0 +1,16 @@
+<header class="site-header">
+  <a class="brand" routerLink="/">Bright<span>Path</span></a>
+  <nav aria-label="Main navigation">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/about" routerLinkActive="active">About Us</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <router-outlet />
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 BrightPath. Built with Angular.</p>
+</footer>
